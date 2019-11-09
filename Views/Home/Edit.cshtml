@@ -1,0 +1,50 @@
+@model Dish
+
+<div class="row">
+  <div class="col text-center mt-3">
+    <h1>Edit @Model.Name</h1>
+  </div>
+</div>
+<!-- <form asp-action="New" asp-controller="Home" method="post"> -->
+<form asp-action="Edit" asp-controller="Home" method="post">
+  <input type="hidden" asp-for="dishId">
+  <input type="hidden" asp-for="CreatedAt">
+  <div class="row mt-4">
+    <div class="col">
+      <div class="form-group">
+        <label asp-for="Chef">Chef's Name</label>
+        <input asp-for="Chef" class="form-control">
+      </div>
+      <div class="form-group">
+        <label asp-for="Name">Name of Dish</label>
+        <input asp-for="Name" class="form-control">
+      </div>
+      <div class="form-group">
+        <label asp-for="Calories">Calories</label>
+        <input asp-for="Calories" class="form-control">
+      </div>
+    </div>
+    <div class="col text-center">
+      <label asp-for="Tastiness">Tastiness</label>
+      <div>
+        <select asp-for="Tastiness">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+      </div>
+
+    </div>
+    <div class="col">
+      <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <textarea asp-for="Description" class="form-control no-resize" cols="30" rows="5"></textarea>
+      </div>
+    </div>
+  </div>
+  <div class="text-center mt-4">
+    <button class="btn btn-primary" type="submit">Edit Dish</button>
+  </div>
+</form>
